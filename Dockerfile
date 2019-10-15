@@ -26,6 +26,7 @@ RUN echo "$USERNAME"
 RUN useradd -d $HOME --shell /bin/bash --user-group --groups wheel ${USERNAME}\
     && echo "$USERNAME:$PASSWORD" | chpasswd
 RUN echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN unset PASSWORD
 
 # Source global definitions
 RUN echo "if [ -f /etc/bashrc ]; then  . /etc/bashrc; fi" >> $HOME/.bashrc \
