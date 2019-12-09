@@ -9,16 +9,16 @@ sudo rm -v /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # 2. install jdk krb5 client
-redhat sudo yum install -y curl gcc gcc-c++ git krb5-devel krb5-server krb5-workstation \
+sudo yum install -y curl gcc gcc-c++ git krb5-devel krb5-server krb5-workstation \
         make ntp ntpdate cmake lsof openssh-server redhat-lsb java-1.8.0-openjdk-devel \
         java-1.8.0-openjdk-src python-argparse
 
 # CentOS repos don't contain ccache, so install from EPEL
-redhat sudo yum install -y epel-release
-redhat sudo yum install -y ccache
+sudo yum install -y epel-release
+sudo yum install -y ccache
 
 # Clean up yum caches
-redhat sudo yum clean all
+sudo yum clean all
 
 # Download ant for centos
 if [ ! -d /usr/local/apache-ant-1.9.14 ]; then
