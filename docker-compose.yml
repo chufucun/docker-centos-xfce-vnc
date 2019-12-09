@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # /dev/shm
+    shm_size: '2gb'
     # use /opt as workdir for restore
     volumes:
       - ./data:/opt/
@@ -12,7 +14,7 @@ services:
       - "6903:6901"
       - "5903:5901"
     environment:
-      - VNC_RESOLUTION=1536x864
+      - VNC_RESOLUTION=1600x900
       - VNC_PW=${ADMIN_PASSWORD:-admin}
 
     # for development and debugging.
