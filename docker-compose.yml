@@ -6,13 +6,14 @@ services:
       context: .
       dockerfile: Dockerfile
     # /dev/shm
-    shm_size: '2gb'
+    shm_size: '10gb'
     # use /opt as workdir for restore
     volumes:
       - ./data:/opt/
     ports:
       - "6903:6901"
       - "5903:5901"
+      - "2233:22"
     environment:
       - VNC_RESOLUTION=1600x900
       - VNC_PW=${ADMIN_PASSWORD:-admin}
