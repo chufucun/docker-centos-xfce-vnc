@@ -1,2 +1,3 @@
 #!/bin/bash
-docker-compose exec desktop bash
+service=`docker-compose ps --services| head -n 1`
+docker-compose exec $service bash
