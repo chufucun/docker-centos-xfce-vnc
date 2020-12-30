@@ -41,6 +41,6 @@ if [ ! -d /usr/local/apache-maven-3.5.4 ]; then
 fi
 
 # ssh config
-ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
-/usr/sbin/sshd -D
+sudo /usr/bin/ssh-keygen -A
+sudo /usr/sbin/sshd
 
